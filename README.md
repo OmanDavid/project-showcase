@@ -1,16 +1,69 @@
-# React + Vite
+# Project Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal project showcase Single Page Application (SPA) built with React and Vite. Users can add, search, and delete projects dynamically without any page reloads.
 
-Currently, two official plugins are available:
+## Screenshot
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![App Screenshot](src/assets/app.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add new projects with a title and description
+- Delete projects with a single click
+- Search/filter projects in real time
+- Responsive design that works on mobile and desktop
+- Dark editorial theme with yellow accent
 
-## Expanding the ESLint configuration
+## Component Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## State Management
+
+- `projects` — array of project objects, managed in `App`
+- `searchTerm` — string for filtering projects, managed in `App`
+- `ProjectForm` manages its own local input state via `useState`
+
+## Setup and Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/OmanDavid/project-showcase.git
+cd project-showcase
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser at `http://localhost:5173`
+
+## Running Tests
+
+```bash
+npm test
+```
+
+Tests are written with Vitest and React Testing Library. The following components are covered:
+
+- `Header` — renders the app title
+- `ProjectCard` — renders project details and handles delete
+- `ProjectForm` — handles input, submission, and empty title guard
+- `ProjectList` — renders projects and shows empty state message
+
+## Known Limitations
+
+- Projects are not persisted — refreshing the page resets the list to seed data
+- Image support is not included in this version
+- No backend or database integration
+
+## Tech Stack
+
+- React 19
+- Vite
+- Vitest
+- React Testing Library
