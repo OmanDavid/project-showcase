@@ -1,6 +1,7 @@
 // App component — root component, manages global state
 // Passes state and handlers down to child components as props
 
+import './App.css'
 import { useState } from 'react'
 import Header from './components/Header'
 import ProjectForm from './components/ProjectForm'
