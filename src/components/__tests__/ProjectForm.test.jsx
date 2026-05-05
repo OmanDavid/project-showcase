@@ -1,5 +1,6 @@
 // Tests for the ProjectForm component
 import { render, screen, fireEvent } from '@testing-library/react'
+import { vi } from 'vitest'
 import ProjectForm from '../ProjectForm'
 
 describe('ProjectForm', () => {
@@ -10,7 +11,7 @@ describe('ProjectForm', () => {
   })
 
   test('calls onAdd with new project when form is submitted', () => {
-    const mockAdd = jest.fn()
+    const mockAdd = vi.fn()
     render(<ProjectForm onAdd={mockAdd} />)
 
     // Fill in the form
@@ -34,7 +35,7 @@ describe('ProjectForm', () => {
   })
 
   test('does not call onAdd if title is empty', () => {
-    const mockAdd = jest.fn()
+    const mockAdd = vi.fn()
     render(<ProjectForm onAdd={mockAdd} />)
     fireEvent.click(screen.getByText('Add'))
     expect(mockAdd).not.toHaveBeenCalled()

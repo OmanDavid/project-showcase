@@ -1,5 +1,6 @@
 // Tests for the ProjectCard component
 import { render, screen, fireEvent } from '@testing-library/react'
+import { vi } from 'vitest'
 import ProjectCard from '../ProjectCard'
 
 // Mock project data for testing
@@ -17,7 +18,7 @@ describe('ProjectCard', () => {
   })
 
   test('calls onDelete with correct id when X is clicked', () => {
-    const mockDelete = jest.fn()
+    const mockDelete = vi.fn()
     render(<ProjectCard project={mockProject} onDelete={mockDelete} />)
     fireEvent.click(screen.getByText('X'))
     expect(mockDelete).toHaveBeenCalledWith(1)
