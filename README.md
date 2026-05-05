@@ -6,6 +6,10 @@ A personal project showcase Single Page Application (SPA) built with React and V
 
 ![App Screenshot](src/assets/app.png)
 
+## Live Demo
+
+[View Live App](https://omandavid.github.io/project-showcase/)
+
 ## Features
 
 - Add new projects with a title and description
